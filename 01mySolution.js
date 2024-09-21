@@ -7,5 +7,5 @@ function countPositivesSumNegatives(input) {
     return [positiveCount, summNegativeCount]; //возращение массива 
 }
 
-let input = [0, 1];
+let input = [0, 11];
 console.log(countPositivesSumNegatives(input)); 

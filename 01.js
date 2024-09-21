@@ -13,6 +13,6 @@ function countPositivesSumNegatives(input) {
     }
   };
   
-  let input = [-1, 2];
+  let input = [-1, 2, 3];
   
   console.log(countPositivesSumNegatives(input));
