@@ -3,4 +3,4 @@ function isDivisible(n, x, y) {
 }
 
 const result = isDivisible(3,1,1)
-console.log(result);
+console.log(result); 
