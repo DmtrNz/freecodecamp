@@ -9,8 +9,8 @@ function persistence(num) {
     // Continue multiplying the digits until we have a single-digit number
     while (num >= 10) {
         num = multiplyDigits(num);
-        count++;
-    }
+        count++; 
+    } 
 
     return count;
 }
