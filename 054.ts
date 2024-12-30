@@ -7,7 +7,7 @@ const toSnakeCase = (str: string): string => {
 
     // Объединяем слова обратно в строку с подчеркиваниями
     return snakeCaseWords.join('_');
-}
+} 
 
 console.log(toSnakeCase("the-Stealth-warrior"));
 
