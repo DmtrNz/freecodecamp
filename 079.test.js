@@ -16,6 +16,6 @@ test('should update corresponding user', () => {
 
     expect(users['1'].name).toBe('Ekaterina');
     expect(users['1']).toEqual({ id: 1, name: 'Ekaterina' })
-    expect(users['1212']).toBe(undefined) //аналогично записи ниже
+    expect(users['1212']).toBe(undefined) 
     expect(users['1212']).toBeUndefined()
 })
