@@ -1,4 +1,4 @@
-import { toSnakeCase } from './077';
+import { toSnakeCase } from './082';
 
 describe('toSnakeCase', () => {
     it('string', () => {
