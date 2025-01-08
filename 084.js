@@ -1,4 +1,4 @@
-function getUniqueNumbers(arr) {
+export function getUniqueNumbers(arr) {
     // Используем Set для удаления дубликатов
     let uniqueSet = new Set(arr);
 
