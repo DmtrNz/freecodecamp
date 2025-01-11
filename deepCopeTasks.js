@@ -156,7 +156,19 @@
         }
     };
 
-    let man6FullCopy  //  your code
+    let man6FullCopy = {
+        ...man6,
+        mother: {
+            ...man6.mother,
+            work: {
+                ...man6.mother.work
+            },
+            parents: man6.mother.parents.map(el=>{return{
+                ...el, 
+                favoriteDish: {...el.favoriteDish}
+            }})
+        }
+    }
 
 
     //10 Array of objects inside an object -> object -> array -> object ->  object
@@ -198,6 +210,21 @@
         }
     };
 
-    let man7FullCopy  //  your code
+    let man7FullCopy = {
+        ...man7,
+        mother: {
+            ...man7.mother,
+            work: {...man7.mother.work},
+            parents: man7.mother.parents.map(el=>{return{
+                ...el,
+                favoriteDish: {
+                    ...el.favoriteDish,
+                    ingredients: el.favoriteDish.ingredients.map(e=>{return{...e}})
+                }
+            }})
+        }
+    }
 
-
+console.log(
+    man7.mother.parents[1].favoriteDish.ingredients[0].title === man7FullCopy.mother.parents[1].favoriteDish.ingredients[0].title
+)
