@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.calculator = void 0;
-var calculator = function (state, action) {
+
+let calculator = function (state, action) {
     switch (action.type) {
         case "SUM":
             return state + action.payload;
@@ -15,5 +13,5 @@ var calculator = function (state, action) {
             return state;
     }
 };
-exports.calculator = calculator;
 //Что вернёт такой вызов функции: calculator(10, {type: "MULT", payload: 2})?
+console.log(calculator(10, {type: "MULT", payload: 2}))
