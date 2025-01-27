@@ -1,19 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.calculator = void 0;
-var calculator = function (state, action) {
-    switch (action.type) {
-        case "SUM":
-            return state + action.payload;
-        case "SUB":
-            return state - action.payload;
-        case "DIV":
-            return state / action.payload;
-        case "EXP":
-            return Math.pow(state, action.payload);
-        default:
-            return state;
-    }
-};
-exports.calculator = calculator;
-//Что вернёт такой вызов функции: calculator(10, {type: "MULT", payload: 2})?
+describe("nbYear",function() {
+//     it("Basic tests",function() {    
+//         Test.assertEquals(nbYear(1500, 5, 100, 5000), 15);
+//         Test.assertEquals(nbYear(1500000, 2.5, 10000, 2000000), 10);
+//         Test.assertEquals(nbYear(1500000, 0.25, 1000, 2000000), 94);
+//         Test.assertEquals(nbYear(1000, 2.0, 50, 1214), 4, "Did you maybe forgot to round down population at the end of each year?");
+//     })})
