@@ -1,7 +1,7 @@
 export const reducer = (state: any, action: any) => {
     switch (action.type) {
         case "TRACK-DELETED":
-            return state.filter((track: any) => XXX)
+            return state.filter((track: any) => track.id !== action.trackId);
         default:
             return state
     }
@@ -19,3 +19,4 @@ const newState = reducer(state, deleteTrackAC(14))
 console.log(newState.length === 2)
 
 // Что нужно написать вместо XXX, чтобы корректно удалить трек и в консоли увидеть true?
+//answer: 

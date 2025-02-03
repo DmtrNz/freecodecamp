@@ -1,5 +1,5 @@
 //@ts-ignore
-const value = [0, [1, 0]][1][0]
+const value = [0, [1, 0]][1][0] //1
 let quantity
 
 switch (value) {
@@ -15,3 +15,4 @@ switch (value) {
 }
 
 // Какое значение получит переменная quantity?
+//answer: 79
