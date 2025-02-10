@@ -1,0 +1,83 @@
+1. Импорт необходимых модулей
+ 
+import React, { useState, useReducer, useEffect } from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+Импортируем React и несколько хуков (useState, useReducer, useEffect) из библиотеки React.
+Импортируем ReactDOM для рендеринга компонента в DOM.
+Импортируем CSS файл для стилей.
+2. Функция редюсера
+ 
+const changeCounter = (state: number, action: any): number => {
+    switch (action.type) {
+        case "INC_VALUE":
+            return state + 1;
+        case "RESET":
+            return 0;
+        case "DEC_VALUE":
+            return state - 1;
+        default:
+            return state;
+    }
+}
+changeCounter — это функция редюсера, которая принимает текущее состояние (state) и действие (action).
+В зависимости от типа действия (INC_VALUE, RESET, DEC_VALUE), редюсер изменяет состояние счетчика:
+INC_VALUE: увеличивает значение на 1.
+RESET: сбрасывает значение на 0.
+DEC_VALUE: уменьшает значение на 1.
+Если действие не распознано, возвращается текущее состояние.
+3. Компонент Counter
+ 
+function Counter() {
+    const [value, setValue] = XXX(changeCounter, 0);
+    const [isCounter, setIsCounter] = YYY(true);
+Внутри компонента Counter используются два состояния:
+value: текущее значение счетчика, управляемое с помощью редюсера changeCounter (useReducer).
+isCounter: булевое значение, указывающее, включен ли счетчик (useState).
+4. Стили
+ 
+const commonStyles: React.CSSProperties = {
+    border: "1px solid black",
+    margin: "100px auto",
+    width: "300px",
+    height: "150px",
+    textAlign: "center",
+}
+const btnStyles: React.CSSProperties = {
+    color: "white",
+    fontWeight: "bold",
+    backgroundColor: "darkgray",
+    borderRadius: "3px",
+    minWidth: "40px"
+}
+Определяются стили для общего контейнера и кнопок. Это позволяет легко управлять внешним видом компонентов.
+5. JSX разметка
+ 
+return (
+    <div style={commonStyles}>
+        {isCounter
+            ? <div>
+                <div style={{ marginBottom: "20px" }}>
+                    <h2>{value}</h2>
+                    <button style={{ ...btnStyles, backgroundColor: "red" }} onClick={() => setIsCounter(false)}> OFF </button>
+                </div>
+                <button style={btnStyles} onClick={() => setValue({ type: "INC_VALUE" })}> +</button>
+                <button style={btnStyles} onClick={() => setValue({ type: "RESET" })}> 0 </button>
+                <button style={btnStyles} onClick={() => setValue({ type: "DEC_VALUE" })}> -</button>
+            </div>
+            : <div style={{ textAlign: "center" }}>
+                <h2>Counter not working</h2>
+                <button style={{ ...btnStyles, backgroundColor: "green" }} onClick={() => setIsCounter(true)}> ON </button>
+            </div>
+        }
+    </div>
+)
+JSX разметка рендерит интерфейс счетчика.
+Если isCounter равно true, отображаются кнопки для увеличения, сброса и уменьшения значения счетчика, а также кнопка для выключения счетчика.
+Если isCounter равно false, отображается сообщение и кнопка для включения счетчика.
+6. Рендеринг компонента
+ 
+ReactDOM.render(
+    <Counter />, document.getElementById('root')
+);
+Компонент Counter рендерится в элемент с id root в HTML-документе.
