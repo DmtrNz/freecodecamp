@@ -1,0 +1,41 @@
+1) x_let_before_await: 4
+2) x_let_after_await: 5
+3) x_let_setImmediate: 5
+4) x_let_nested_timeout: 5
+
+5) x_let_second_await: 6
+6) x_let_finally
+7) y_const_before_await: 4
+8) x_let_second_setImmediate: 6
+9) x_let_second_nested_timeout: 6
+
+10) y_const_1: 5
+11) y_const_setImmediate: 5
+12) y_const_2: 6
+13) y_const_after_all: 4
+14) y_const_finally
+15) y_const_nested_timeout: 5
+16) y_const_second_setImmediate: 6
+17) y_const_second_nested_timeout: 6
+
+
+
+x_let_before_await: 4
+x_let_after_await: 5
+XXXXXX
+x_let_setImmediate: 5
+x_let_nested_timeout: 5
+x_let_second_await: 6
+x_let_finally
+y_const_before_await: 4
+XXX
+x_let_second_setImmediate: 6
+x_let_second_nested_timeout: 6
+y_const_1: 5
+y_const_setImmediate: 5
+y_const_2: 6
+y_const_after_all: 4
+y_const_finally
+y_const_nested_timeout: 5
+y_const_second_setImmediate: 6
+y_const_second_nested_timeout: 6
