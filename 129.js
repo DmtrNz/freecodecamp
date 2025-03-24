@@ -71,3 +71,17 @@ const book2 = {
     title: "Мастер и Маргарита",
     borrowed: false,
 };
+
+// taskManager.addTask.call(taskManager, task1)
+// taskManager.addTask.apply(taskManager, [task2])
+// const completeTaskBound = taskManager.completeTask.bind(taskManager)
+// completeTaskBound(task1.id)
+
+// taskManager.getTaskInfo.call(taskManager, task2.id)
+
+library.addBook.call(library, book1)
+library.addBook.apply(library, [book2])
+const borrowBookBound = library.borrowBook.bind(library)
+borrowBookBound(book1.id)
+library.returnBook.call(library, book1.id)
+library.getBookInfo.apply(library, [book2.id])
