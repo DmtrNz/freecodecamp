@@ -53,3 +53,10 @@ const task2 = {
     title: "Позвонить другу",
     completed: false,
 };
+
+taskManager.addTask.call(taskManager, task1)
+taskManager.addTask.apply(taskManager, [task2])
+const completeTaskBound = taskManager.completeTask.bind(taskManager)
+completeTaskBound(task1.id)
+
+taskManager.getTaskInfo.call(taskManager, task2.id)
