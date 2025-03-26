@@ -72,3 +72,9 @@ const order2 = {
     canceled: false,
 };
 
+orderManager.addOrder.call(orderManager, order1)
+orderManager.addOrder.apply(orderManager, [order2])
+const processOrderBound = orderManager.processOrder.bind(orderManager)
+processOrderBound(order1.id)
+orderManager.cancelOrder.call(orderManager, order2.id)
+orderManager.getOrderInfo.apply(orderManager, [order1.id])
