@@ -18,40 +18,40 @@
  */
 
 const taskManager = {
-    tasks: [],
-    addTask(task) {
-        this.tasks.push(task);
-        console.log(`Задача "${task.title}" добавлена.`);
-    },
-    completeTask(taskId) {
-        const task = this.tasks.find(t => t.id === taskId);
-        if (task) {
-            task.completed = true;
-            console.log(`Задача "${task.title}" выполнена.`);
-        } else {
-            console.log("Задача не найдена.");
-        }
-    },
-    getTaskInfo(taskId) {
-        const task = this.tasks.find(t => t.id === taskId);
-        if (task) {
-            console.log(`Информация о задаче: ${task.title}, статус: ${task.completed ? "выполнена" : "не выполнена"}`);
-        } else {
-            console.log("Задача не найдена.");
-        }
-    },
+  tasks: [],
+  addTask(task) {
+    this.tasks.push(task);
+    console.log(`Задача "${task.title}" добавлена.`);
+  },
+  completeTask(taskId) {
+    const task = this.tasks.find(t => t.id === taskId);
+    if (task) {
+      task.completed = true;
+      console.log(`Задача "${task.title}" выполнена.`);
+    } else {
+      console.log("Задача не найдена.");
+    }
+  },
+  getTaskInfo(taskId) {
+    const task = this.tasks.find(t => t.id === taskId);
+    if (task) {
+      console.log(`Информация о задаче: ${task.title}, статус: ${task.completed ? "выполнена" : "не выполнена"}`);
+    } else {
+      console.log("Задача не найдена.");
+    }
+  },
 };
 
 const task1 = {
-    id: 1,
-    title: "Купить молоко",
-    completed: false,
+  id: 1,
+  title: "Купить молоко",
+  completed: false,
 };
 
 const task2 = {
-    id: 2,
-    title: "Позвонить другу",
-    completed: false,
+  id: 2,
+  title: "Позвонить другу",
+  completed: false,
 };
 
 taskManager.addTask.call(taskManager, task1)

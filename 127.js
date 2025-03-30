@@ -17,36 +17,36 @@
 */
 
 const bank = {
-    bankName: "SuperBank",
-    clients: [],
-    addClient(client) {
-        this.clients.push(client);
-        console.log(`Клиент ${client.name} добавлен в банк ${this.bankName}`);
-    },
-    getClientInfo(clientId) {
-        const client = this.clients.find(c => c.id === clientId);
-        if (client) {
-            console.log(`Информация о клиенте: ${client.name}, баланс: ${client.balance}`);
-        } else {
-            console.log("Клиент не найден.");
-        }
-    },
+  bankName: "SuperBank",
+  clients: [],
+  addClient(client) {
+    this.clients.push(client);
+    console.log(`Клиент ${client.name} добавлен в банк ${this.bankName}`);
+  },
+  getClientInfo(clientId) {
+    const client = this.clients.find(c => c.id === clientId);
+    if (client) {
+      console.log(`Информация о клиенте: ${client.name}, баланс: ${client.balance}`);
+    } else {
+      console.log("Клиент не найден.");
+    }
+  },
 };
 
 const client1 = {
-    id: 1,
-    name: "Alice",
-    balance: 1000,
+  id: 1,
+  name: "Alice",
+  balance: 1000,
 };
 
 const client2 = {
-    id: 2,
-    name: "Bob",
-    balance: 500,
+  id: 2,
+  name: "Bob",
+  balance: 500,
 };
 
 bank.addClient.call(bank, client1) //bank указавает контекст выполнения функции addClient
-bank.addClient.apply(bank, [client2]) 
+bank.addClient.apply(bank, [client2])
 
 const getClientInfoBound = bank.getClientInfo.bind(bank)
 getClientInfoBound(client1.id)

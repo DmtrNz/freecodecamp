@@ -19,57 +19,57 @@
 */
 
 const orderManager = {
-    orders: [],
-    addOrder(order) {
-        this.orders.push(order);
-        console.log(`Заказ #${order.id} добавлен.`);
-    },
-    processOrder(orderId) {
-        const order = this.orders.find(o => o.id === orderId);
-        if (order) {
-            if (!order.processed) {
-                order.processed = true;
-                console.log(`Заказ #${order.id} обработан.`);
-            } else {
-                console.log(`Заказ #${order.id} уже обработан.`);
-            }
-        } else {
-            console.log("Заказ не найден.");
-        }
-    },
-    cancelOrder(orderId) {
-        const order = this.orders.find(o => o.id === orderId);
-        if (order) {
-            if (!order.canceled) {
-                order.canceled = true;
-                console.log(`Заказ #${order.id} отменен.`);
-            } else {
-                console.log(`Заказ #${order.id} уже отменен.`);
-            }
-        } else {
-            console.log("Заказ не найден.");
-        }
-    },
-    getOrderInfo(orderId) {
-        const order = this.orders.find(o => o.id === orderId);
-        if (order) {
-            console.log(`Информация о заказе #${order.id}: статус - ${order.processed ? "обработан" : "не обработан"}, ${order.canceled ? "отменен" : "не отменен"}`);
-        } else {
-            console.log("Заказ не найден.");
-        }
-    },
+  orders: [],
+  addOrder(order) {
+    this.orders.push(order);
+    console.log(`Заказ #${order.id} добавлен.`);
+  },
+  processOrder(orderId) {
+    const order = this.orders.find(o => o.id === orderId);
+    if (order) {
+      if (!order.processed) {
+        order.processed = true;
+        console.log(`Заказ #${order.id} обработан.`);
+      } else {
+        console.log(`Заказ #${order.id} уже обработан.`);
+      }
+    } else {
+      console.log("Заказ не найден.");
+    }
+  },
+  cancelOrder(orderId) {
+    const order = this.orders.find(o => o.id === orderId);
+    if (order) {
+      if (!order.canceled) {
+        order.canceled = true;
+        console.log(`Заказ #${order.id} отменен.`);
+      } else {
+        console.log(`Заказ #${order.id} уже отменен.`);
+      }
+    } else {
+      console.log("Заказ не найден.");
+    }
+  },
+  getOrderInfo(orderId) {
+    const order = this.orders.find(o => o.id === orderId);
+    if (order) {
+      console.log(`Информация о заказе #${order.id}: статус - ${order.processed ? "обработан" : "не обработан"}, ${order.canceled ? "отменен" : "не отменен"}`);
+    } else {
+      console.log("Заказ не найден.");
+    }
+  },
 };
 
 const order1 = {
-    id: 1,
-    processed: false,
-    canceled: false,
+  id: 1,
+  processed: false,
+  canceled: false,
 }
 
 const order2 = {
-    id: 2,
-    processed: false,
-    canceled: false,
+  id: 2,
+  processed: false,
+  canceled: false,
 };
 
 orderManager.addOrder.call(orderManager, order1)
