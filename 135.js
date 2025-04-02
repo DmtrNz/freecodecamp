@@ -1,26 +1,43 @@
-// Условие:
-// У вас есть конструктор Animal, который принимает name и type. У каждого животного есть метод speak(), который выводит звук.
+// Конструктор объекта "Person"
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
 
-// Реализуйте цепочку прототипов:
+// Добавление метода в прототип
+Person.prototype.greet = function() {
+  console.log(`Hello, my name is ${this.name} and I'm ${this.age} years old.`);
+};
 
-// Создайте конструктор Dog, наследующий от Animal.
+// Создание экземпляра
+const john = new Person("John", 30);
+john.greet(); // "Hello, my name is John and I'm 30 years old."
 
-// Переопределите метод speak() для Dog (должен выводить "Гав!").
+// Родительский конструктор
+function Animal(name) {
+  this.name = name;
+}
 
-// Добавьте уникальный метод fetch() (выводит "Принёс палку!").
+Animal.prototype.speak = function() {
+  console.log(`${this.name} makes a sound.`);
+};
 
-// Проверьте:
+// Дочерний конструктор (наследование)
+function Dog(name, breed) {
+  Animal.call(this, name); // Вызов родительского конструктора
+  this.breed = breed;
+}
 
-// Создайте экземпляр Dog, вызовите speak() и fetch().
+// Настройка цепочки прототипов (Dog → Animal → Object)
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog; // Возвращаем правильный constructor
 
-// Убедитесь, что Dog наследует свойства Animal.
+// Добавляем метод в Dog
+Dog.prototype.bark = function() {
+  console.log(`${this.name} (${this.breed}) barks: Woof!`);
+};
 
-// Ожидаемый вывод:
-
-// javascript
-// Copy
-// const rex = new Dog("Rex", "dog");
-// rex.speak();  // "Гав!" 
-// rex.fetch();  // "Принёс палку!"
-// rex.name;     // "Rex" (наследуется от Animal)
-
+// Создаём экземпляр Dog
+const rex = new Dog("Rex", "German Shepherd");
+rex.speak(); // "Rex makes a sound." (унаследовано от Animal)
+rex.bark();  // "Rex (German Shepherd) barks: Woof!"
